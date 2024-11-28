@@ -213,7 +213,7 @@ export const teachers: Teacher[] = [
     name: "أ. محمد بن سعيد الراشدي",
     email: "mohammed@school.om",
     phone: "96893456789",
-    subjects: [Subject.MATHEMATICS, Subject.COMPUTER_SCIENCE],
+    subjects: [Subject.MATHEMATICS],
     photoUrl:
       "https://ui-avatars.com/api/?name=محمد+الراشدي&background=2563eb&color=fff&size=128&font-size=0.4",
   },
@@ -222,7 +222,7 @@ export const teachers: Teacher[] = [
     name: "أ. يوسف بن سعيد الريامي",
     email: "yousuf@school.om",
     phone: "96894567890",
-    subjects: [Subject.ENGLISH, Subject.SOCIAL_STUDIES],
+    subjects: [Subject.ENGLISH],
     photoUrl:
       "https://ui-avatars.com/api/?name=يوسف+الريامي&background=2563eb&color=fff&size=128&font-size=0.4",
   },
@@ -231,7 +231,7 @@ export const teachers: Teacher[] = [
     name: "أ. أحمد بن سالم الكندي",
     email: "ahmed@school.om",
     phone: "96895678901",
-    subjects: [Subject.ARABIC, Subject.ISLAMIC_STUDIES],
+    subjects: [Subject.ARABIC],
     photoUrl:
       "https://ui-avatars.com/api/?name=أحمد+الكندي&background=2563eb&color=fff&size=128&font-size=0.4",
   },
@@ -240,9 +240,45 @@ export const teachers: Teacher[] = [
     name: "أ. عبدالله بن حمد البلوشي",
     email: "abdullah@school.om",
     phone: "96896789012",
-    subjects: [Subject.SCIENCE, Subject.PHYSICAL_EDUCATION],
+    subjects: [Subject.SCIENCE],
     photoUrl:
       "https://ui-avatars.com/api/?name=عبدالله+البلوشي&background=2563eb&color=fff&size=128&font-size=0.4",
+  },
+  {
+    id: "T5",
+    name: "أ. عمر بن خالد السعدي",
+    email: "omar@school.om",
+    phone: "96897890123",
+    subjects: [Subject.ISLAMIC_STUDIES],
+    photoUrl:
+      "https://ui-avatars.com/api/?name=عمر+السعدي&background=2563eb&color=fff&size=128&font-size=0.4",
+  },
+  {
+    id: "T6",
+    name: "أ. سعيد بن راشد المعمري",
+    email: "saeed@school.om",
+    phone: "96898901234",
+    subjects: [Subject.SOCIAL_STUDIES],
+    photoUrl:
+      "https://ui-avatars.com/api/?name=سعيد+المعمري&background=2563eb&color=fff&size=128&font-size=0.4",
+  },
+  {
+    id: "T7",
+    name: "أ. ناصر بن سالم الحبسي",
+    email: "nasser@school.om",
+    phone: "96899012345",
+    subjects: [Subject.PHYSICAL_EDUCATION],
+    photoUrl:
+      "https://ui-avatars.com/api/?name=ناصر+الحبسي&background=2563eb&color=fff&size=128&font-size=0.4",
+  },
+  {
+    id: "T8",
+    name: "أ. طلال بن حمد الزدجالي",
+    email: "talal@school.om",
+    phone: "96890123456",
+    subjects: [Subject.COMPUTER_SCIENCE],
+    photoUrl:
+      "https://ui-avatars.com/api/?name=طلال+الزدجالي&background=2563eb&color=fff&size=128&font-size=0.4",
   },
 ];
 
@@ -254,7 +290,7 @@ export const schedules: ClassSchedule[] = [
     day: "monday",
     timeSlot: "07:30-08:15",
     subject: Subject.ISLAMIC_STUDIES,
-    teacherId: "T3",
+    teacherId: "T5",
     room: "١٠١",
   },
   {
@@ -304,7 +340,7 @@ export const schedules: ClassSchedule[] = [
     day: "tuesday",
     timeSlot: "08:15-09:00",
     subject: Subject.COMPUTER_SCIENCE,
-    teacherId: "T1",
+    teacherId: "T8",
     room: "مختبر ١",
   },
   {
@@ -312,7 +348,7 @@ export const schedules: ClassSchedule[] = [
     day: "tuesday",
     timeSlot: "09:00-09:45",
     subject: Subject.SOCIAL_STUDIES,
-    teacherId: "T2",
+    teacherId: "T6",
     room: "١٠١",
   },
   {
@@ -328,7 +364,7 @@ export const schedules: ClassSchedule[] = [
     day: "tuesday",
     timeSlot: "11:00-11:45",
     subject: Subject.PHYSICAL_EDUCATION,
-    teacherId: "T4",
+    teacherId: "T7",
     room: "الملعب",
   },
 
@@ -346,7 +382,7 @@ export const schedules: ClassSchedule[] = [
     day: "wednesday",
     timeSlot: "08:15-09:00",
     subject: Subject.ISLAMIC_STUDIES,
-    teacherId: "T3",
+    teacherId: "T5",
     room: "١٠١",
   },
   {
@@ -370,7 +406,7 @@ export const schedules: ClassSchedule[] = [
     day: "wednesday",
     timeSlot: "11:00-11:45",
     subject: Subject.COMPUTER_SCIENCE,
-    teacherId: "T1",
+    teacherId: "T8",
     room: "مختبر ١",
   },
 
@@ -396,7 +432,7 @@ export const schedules: ClassSchedule[] = [
     day: "thursday",
     timeSlot: "09:00-09:45",
     subject: Subject.SOCIAL_STUDIES,
-    teacherId: "T2",
+    teacherId: "T6",
     room: "١٠١",
   },
   {
@@ -412,7 +448,7 @@ export const schedules: ClassSchedule[] = [
     day: "thursday",
     timeSlot: "11:00-11:45",
     subject: Subject.PHYSICAL_EDUCATION,
-    teacherId: "T4",
+    teacherId: "T7",
     room: "الملعب",
   },
 ];

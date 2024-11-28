@@ -8,7 +8,7 @@ type LanguageCode = keyof typeof translations;
 
 // Create a function to get the current language
 const getCurrentLanguage = (): LanguageCode => {
-  // Default to Arabic
+  // Always default to Arabic
   return "ar";
 };
 
@@ -16,6 +16,7 @@ export const useTranslations = () => {
   const currentLanguage = getCurrentLanguage();
 
   const t = (key: TranslationKey): string => {
+    // Try Arabic first, then English as fallback
     return translations[currentLanguage][key] || translations.en[key] || key;
   };
 

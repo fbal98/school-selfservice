@@ -127,7 +127,7 @@ export const parents: Parent[] = [
     id: "P1",
     name: "سالم بن راشد الحارثي",
     email: "salem@example.com",
-    phone: "96891234567",
+    phone: "968912341122",
     children: ["S1", "S2"],
   },
   {
@@ -210,36 +210,57 @@ export const grades: Grade[] = [
 export const teachers: Teacher[] = [
   {
     id: "T1",
-    name: "د. عائشة بنت خميس الراشدي",
-    email: "aisha@school.om",
+    name: "أ. محمد بن سعيد الراشدي",
+    email: "mohammed@school.om",
     phone: "96893456789",
-    subjects: [Subject.MATHEMATICS, Subject.SCIENCE],
-    photoUrl: "/teachers/aisha.jpg",
+    subjects: [Subject.MATHEMATICS, Subject.COMPUTER_SCIENCE],
+    photoUrl:
+      "https://ui-avatars.com/api/?name=محمد+الراشدي&background=2563eb&color=fff&size=128&font-size=0.4",
   },
   {
     id: "T2",
     name: "أ. يوسف بن سعيد الريامي",
     email: "yousuf@school.om",
     phone: "96894567890",
-    subjects: [Subject.ENGLISH],
-    photoUrl: "/teachers/yousuf.jpg",
+    subjects: [Subject.ENGLISH, Subject.SOCIAL_STUDIES],
+    photoUrl:
+      "https://ui-avatars.com/api/?name=يوسف+الريامي&background=2563eb&color=fff&size=128&font-size=0.4",
   },
   {
     id: "T3",
-    name: "أ. نورة بنت سالم الكندي",
-    email: "noora@school.om",
+    name: "أ. أحمد بن سالم الكندي",
+    email: "ahmed@school.om",
     phone: "96895678901",
     subjects: [Subject.ARABIC, Subject.ISLAMIC_STUDIES],
-    photoUrl: "/teachers/noora.jpg",
+    photoUrl:
+      "https://ui-avatars.com/api/?name=أحمد+الكندي&background=2563eb&color=fff&size=128&font-size=0.4",
+  },
+  {
+    id: "T4",
+    name: "أ. عبدالله بن حمد البلوشي",
+    email: "abdullah@school.om",
+    phone: "96896789012",
+    subjects: [Subject.SCIENCE, Subject.PHYSICAL_EDUCATION],
+    photoUrl:
+      "https://ui-avatars.com/api/?name=عبدالله+البلوشي&background=2563eb&color=fff&size=128&font-size=0.4",
   },
 ];
 
-// Mock Class Schedule
+// Mock Class Schedule - Organized for optimal student experience
 export const schedules: ClassSchedule[] = [
+  // MONDAY
   {
     studentId: "S1",
     day: "monday",
-    timeSlot: "08:00-09:30",
+    timeSlot: "07:30-08:15",
+    subject: Subject.ISLAMIC_STUDIES,
+    teacherId: "T3",
+    room: "١٠١",
+  },
+  {
+    studentId: "S1",
+    day: "monday",
+    timeSlot: "08:15-09:00",
     subject: Subject.MATHEMATICS,
     teacherId: "T1",
     room: "١٠١",
@@ -247,18 +268,152 @@ export const schedules: ClassSchedule[] = [
   {
     studentId: "S1",
     day: "monday",
-    timeSlot: "09:45-11:15",
+    timeSlot: "09:00-09:45",
     subject: Subject.ENGLISH,
     teacherId: "T2",
-    room: "١٠٢",
+    room: "١٠١",
   },
   {
     studentId: "S1",
     day: "monday",
-    timeSlot: "11:30-13:00",
+    timeSlot: "10:15-11:00",
+    subject: Subject.SCIENCE,
+    teacherId: "T4",
+    room: "١٠١",
+  },
+  {
+    studentId: "S1",
+    day: "monday",
+    timeSlot: "11:00-11:45",
     subject: Subject.ARABIC,
     teacherId: "T3",
-    room: "١٠٣",
+    room: "١٠١",
+  },
+
+  // TUESDAY
+  {
+    studentId: "S1",
+    day: "tuesday",
+    timeSlot: "07:30-08:15",
+    subject: Subject.MATHEMATICS,
+    teacherId: "T1",
+    room: "١٠١",
+  },
+  {
+    studentId: "S1",
+    day: "tuesday",
+    timeSlot: "08:15-09:00",
+    subject: Subject.COMPUTER_SCIENCE,
+    teacherId: "T1",
+    room: "مختبر ١",
+  },
+  {
+    studentId: "S1",
+    day: "tuesday",
+    timeSlot: "09:00-09:45",
+    subject: Subject.SOCIAL_STUDIES,
+    teacherId: "T2",
+    room: "١٠١",
+  },
+  {
+    studentId: "S1",
+    day: "tuesday",
+    timeSlot: "10:15-11:00",
+    subject: Subject.ENGLISH,
+    teacherId: "T2",
+    room: "١٠١",
+  },
+  {
+    studentId: "S1",
+    day: "tuesday",
+    timeSlot: "11:00-11:45",
+    subject: Subject.PHYSICAL_EDUCATION,
+    teacherId: "T4",
+    room: "الملعب",
+  },
+
+  // WEDNESDAY
+  {
+    studentId: "S1",
+    day: "wednesday",
+    timeSlot: "07:30-08:15",
+    subject: Subject.ARABIC,
+    teacherId: "T3",
+    room: "١٠١",
+  },
+  {
+    studentId: "S1",
+    day: "wednesday",
+    timeSlot: "08:15-09:00",
+    subject: Subject.ISLAMIC_STUDIES,
+    teacherId: "T3",
+    room: "١٠١",
+  },
+  {
+    studentId: "S1",
+    day: "wednesday",
+    timeSlot: "09:00-09:45",
+    subject: Subject.MATHEMATICS,
+    teacherId: "T1",
+    room: "١٠١",
+  },
+  {
+    studentId: "S1",
+    day: "wednesday",
+    timeSlot: "10:15-11:00",
+    subject: Subject.SCIENCE,
+    teacherId: "T4",
+    room: "مختبر ٢",
+  },
+  {
+    studentId: "S1",
+    day: "wednesday",
+    timeSlot: "11:00-11:45",
+    subject: Subject.COMPUTER_SCIENCE,
+    teacherId: "T1",
+    room: "مختبر ١",
+  },
+
+  // THURSDAY
+  {
+    studentId: "S1",
+    day: "thursday",
+    timeSlot: "07:30-08:15",
+    subject: Subject.ENGLISH,
+    teacherId: "T2",
+    room: "١٠١",
+  },
+  {
+    studentId: "S1",
+    day: "thursday",
+    timeSlot: "08:15-09:00",
+    subject: Subject.SCIENCE,
+    teacherId: "T4",
+    room: "مختبر ٢",
+  },
+  {
+    studentId: "S1",
+    day: "thursday",
+    timeSlot: "09:00-09:45",
+    subject: Subject.SOCIAL_STUDIES,
+    teacherId: "T2",
+    room: "١٠١",
+  },
+  {
+    studentId: "S1",
+    day: "thursday",
+    timeSlot: "10:15-11:00",
+    subject: Subject.ARABIC,
+    teacherId: "T3",
+    room: "١٠١",
+  },
+  {
+    studentId: "S1",
+    day: "thursday",
+    timeSlot: "11:00-11:45",
+    subject: Subject.PHYSICAL_EDUCATION,
+    teacherId: "T4",
+    room: "الملعب",
   },
 ];
 
@@ -275,10 +430,10 @@ export const contactRequests: ContactRequest[] = [
   },
 ];
 
-// Authentication related mock data
+// Mock validOTPs for parent authentication
 export const validOTPs: Record<string, string> = {
-  "96891234567": "123456", // For Salem
-  "96892345678": "654321", // For Fatma
+  "99427232": "123456", // Salem's phone
+  "99895050": "123456", // Fatma's phone
 };
 
 // Helper function to validate parent login

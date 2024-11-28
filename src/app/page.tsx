@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -15,6 +14,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { validOTPs } from "@/lib/mock-data";
+import { useTranslations } from "../lib/i18n/useTranslations";
 
 export default function LoginPage() {
   const [step, setStep] = useState<"phone" | "otp">("phone");
@@ -22,17 +22,16 @@ export default function LoginPage() {
   const [otp, setOtp] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
+  const t = useTranslations();
 
   const handleRequestOTP = () => {
-    // Validate phone number format
-    if (!/^\d{10}$/.test(phone)) {
-      setError("Please enter a valid 10-digit phone number");
+    if (!/^\d{8,12}$/.test(phone)) {
+      setError(t("invalid.phone"));
       return;
     }
 
-    // Check if phone exists in mock data
     if (!validOTPs[phone]) {
-      setError("Phone number not found");
+      setError(t("invalid.phone"));
       return;
     }
 
@@ -41,18 +40,15 @@ export default function LoginPage() {
   };
 
   const handleVerifyOTP = () => {
-    // Validate OTP format
     if (!/^\d{6}$/.test(otp)) {
-      setError("Please enter a valid 6-digit OTP");
+      setError(t("invalid.otp"));
       return;
     }
 
-    // Verify OTP against mock data
     if (validOTPs[phone] === otp) {
-      // Successful login
       router.push("/dashboard");
     } else {
-      setError("Invalid OTP");
+      setError(t("invalid.otp"));
     }
   };
 
@@ -73,16 +69,7 @@ export default function LoginPage() {
           >
             <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
           </svg>
-          School Portal
-        </div>
-        <div className="relative z-20 mt-auto">
-          <blockquote className="space-y-2">
-            <p className="text-lg">
-              &ldquo;Education is the passport to the future, for tomorrow
-              belongs to those who prepare for it today.&rdquo;
-            </p>
-            <footer className="text-sm">Malcolm X</footer>
-          </blockquote>
+          {t("school.portal")}
         </div>
       </div>
       <div className="lg:p-8">
@@ -90,41 +77,36 @@ export default function LoginPage() {
           <Card>
             <CardHeader className="space-y-1">
               <CardTitle className="text-2xl text-center">
-                Welcome back
+                {t("welcome.back")}
               </CardTitle>
               <CardDescription className="text-center">
-                {step === "phone"
-                  ? "Enter your phone number to sign in"
-                  : "Enter the OTP sent to your phone"}
+                {step === "phone" ? t("enter.phone") : t("enter.otp")}
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4">
               {step === "phone" ? (
                 <div className="grid gap-2">
-                  <Label htmlFor="phone">Phone Number</Label>
+                  <Label htmlFor="phone">{t("phone.number")}</Label>
                   <Input
                     id="phone"
                     type="tel"
-                    placeholder="Enter your phone number"
+                    placeholder={t("phone.placeholder")}
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    maxLength={10}
+                    maxLength={12}
                   />
                 </div>
               ) : (
                 <div className="grid gap-2">
-                  <Label htmlFor="otp">OTP</Label>
+                  <Label htmlFor="otp">{t("otp")}</Label>
                   <Input
                     id="otp"
                     type="text"
-                    placeholder="Enter OTP"
+                    placeholder={t("otp.placeholder")}
                     value={otp}
                     onChange={(e) => setOtp(e.target.value)}
                     maxLength={6}
                   />
-                  <p className="text-sm text-muted-foreground">
-                    OTP sent to {phone}
-                  </p>
                 </div>
               )}
               {error && (
@@ -134,12 +116,12 @@ export default function LoginPage() {
             <CardFooter className="flex flex-col gap-2">
               {step === "phone" ? (
                 <Button className="w-full" onClick={handleRequestOTP}>
-                  Request OTP
+                  {t("get.otp")}
                 </Button>
               ) : (
                 <>
                   <Button className="w-full" onClick={handleVerifyOTP}>
-                    Verify OTP
+                    {t("verify.otp")}
                   </Button>
                   <Button
                     variant="outline"
@@ -150,29 +132,12 @@ export default function LoginPage() {
                       setError("");
                     }}
                   >
-                    Back to Phone Entry
+                    {t("enter.phone")}
                   </Button>
                 </>
               )}
             </CardFooter>
           </Card>
-          <p className="px-8 text-center text-sm text-muted-foreground">
-            By clicking continue, you agree to our{" "}
-            <Link
-              href="/terms"
-              className="underline underline-offset-4 hover:text-primary"
-            >
-              Terms of Service
-            </Link>{" "}
-            and{" "}
-            <Link
-              href="/privacy"
-              className="underline underline-offset-4 hover:text-primary"
-            >
-              Privacy Policy
-            </Link>
-            .
-          </p>
         </div>
       </div>
     </div>

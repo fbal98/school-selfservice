@@ -130,6 +130,25 @@ export const translations = {
     of: "of",
     otp: "OTP",
     "school.portal": "School Portal",
+
+    // Login Page
+    "login.title": "Welcome back",
+    "login.enter.phone.desc": "Enter your phone number to sign in",
+    "login.enter.otp.desc": "Enter the OTP sent to your phone",
+    "login.request.otp": "Request OTP",
+    "login.verify.otp": "Verify OTP",
+    "login.back.to.phone": "Back to Phone Entry",
+    "login.otp.sent": "OTP sent to",
+    "login.terms.text": "By clicking continue, you agree to our",
+    "login.terms.service": "Terms of Service",
+    "login.terms.and": "and",
+    "login.terms.privacy": "Privacy Policy",
+    "login.error.phone": "Please enter a valid 10-digit phone number",
+    "login.error.phone.not.found": "Phone number not found",
+    "login.error.otp.invalid": "Please enter a valid 6-digit OTP",
+    "login.quote":
+      "Education is the passport to the future, for tomorrow belongs to those who prepare for it today.",
+    "login.quote.author": "Malcolm X",
   },
   ar: {
     // Navigation
@@ -210,12 +229,12 @@ export const translations = {
     // Teachers Directory
     "teacher.directory": "دليل المعلمين",
     "view.teachers": "عرض والتواصل مع المعلمين",
-    "teacher.list": "��ائمة جميع المعلمين",
+    "teacher.list": "ائمة جميع المعلمين",
     "contact.teacher": "التواصل مع المعلم",
     "teacher.subjects": "المواد",
     "schedule.meeting": "جدولة اجتماع",
     "search.teachers": "البحث عن المعلمين",
-    "office.hours": "ساعات العمل",
+    "office.hours": "الساعات المكتبية",
     "available.times": "الأوقات المتاحة للقاء المعلمين",
     "office.hours.mon.wed": "الاثنين والأربعاء: ٢:٠٠ - ٣:٠٠",
     "office.hours.tue.thu": "الثلاثاء والخميس: ٣:٠٠ - ٤:٠٠",
@@ -262,5 +281,24 @@ export const translations = {
     of: "من",
     otp: "رمز التحقق",
     "school.portal": "الخدمة الذاتية",
+
+    // Login Page
+    "login.title": "مرحباً بعودتك",
+    "login.enter.phone.desc": "أدخل رقم هاتفك لتسجيل الدخول",
+    "login.enter.otp.desc": "أدخل رمز التحقق المرسل إلى هاتفك",
+    "login.request.otp": "طلب رمز التحقق",
+    "login.verify.otp": "تحقق من الرمز",
+    "login.back.to.phone": "العودة إلى إدخال رقم الهاتف",
+    "login.otp.sent": "تم إرسال رمز التحقق إلى",
+    "login.terms.text": "بالنقر على المتابعة، فإنك توافق على",
+    "login.terms.service": "شروط الخدمة",
+    "login.terms.and": "و",
+    "login.terms.privacy": "سياسة الخصوصية",
+    "login.error.phone": "الرجاء إدخال رقم هاتف صحيح مكون من 10 أرقام",
+    "login.error.phone.not.found": "رقم الهاتف غير موجود",
+    "login.error.otp.invalid": "الرجاء إدخال رمز تحقق صحيح مكون من 6 أرقام",
+    "login.quote":
+      "التعليم هو جواز السفر إلى المستقبل، لأن الغد ملك لمن يستعد له اليوم.",
+    "login.quote.author": "مالكوم إكس",
   },
 } as const;

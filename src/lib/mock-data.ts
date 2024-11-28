@@ -12,8 +12,8 @@ export enum Subject {
 }
 
 export enum Semester {
-  FALL = "FALL",
-  SPRING = "SPRING",
+  FALL = "First Semester",
+  SPRING = "Second Semester",
 }
 
 // Subject Names in English and Arabic
@@ -59,11 +59,11 @@ export const SubjectNames: Record<Subject, { en: string; ar: string }> = {
 // Semester Names in English and Arabic
 export const SemesterNames: Record<Semester, { en: string; ar: string }> = {
   [Semester.FALL]: {
-    en: "Fall Semester",
+    en: "First Semester",
     ar: "الفصل الدراسي الأول",
   },
   [Semester.SPRING]: {
-    en: "Spring Semester",
+    en: "Second Semester",
     ar: "الفصل الدراسي الثاني",
   },
 };
@@ -126,14 +126,14 @@ export const parents: Parent[] = [
   {
     id: "P1",
     name: "سالم بن راشد الحارثي",
-    email: "salem@example.com",
+    email: "salem@school.om",
     phone: "968912341122",
     children: ["S1", "S2"],
   },
   {
     id: "P2",
     name: "فاطمة بنت سعيد البلوشي",
-    email: "fatma@example.com",
+    email: "fatma@school.om",
     phone: "96892345678",
     children: ["S3"],
   },
@@ -284,7 +284,7 @@ export const teachers: Teacher[] = [
 
 // Mock Class Schedule - Organized for optimal student experience
 export const schedules: ClassSchedule[] = [
-  // MONDAY
+  // MONDAY - Student S1 (عبدالله)
   {
     studentId: "S1",
     day: "monday",
@@ -326,7 +326,91 @@ export const schedules: ClassSchedule[] = [
     room: "١٠١",
   },
 
-  // TUESDAY
+  // MONDAY - Student S2 (مريم)
+  {
+    studentId: "S2",
+    day: "monday",
+    timeSlot: "07:30-08:15",
+    subject: Subject.MATHEMATICS,
+    teacherId: "T1",
+    room: "١٠٢",
+  },
+  {
+    studentId: "S2",
+    day: "monday",
+    timeSlot: "08:15-09:00",
+    subject: Subject.ARABIC,
+    teacherId: "T3",
+    room: "١٠٢",
+  },
+  {
+    studentId: "S2",
+    day: "monday",
+    timeSlot: "09:00-09:45",
+    subject: Subject.SCIENCE,
+    teacherId: "T4",
+    room: "١٠٢",
+  },
+  {
+    studentId: "S2",
+    day: "monday",
+    timeSlot: "10:15-11:00",
+    subject: Subject.ENGLISH,
+    teacherId: "T2",
+    room: "١٠٢",
+  },
+  {
+    studentId: "S2",
+    day: "monday",
+    timeSlot: "11:00-11:45",
+    subject: Subject.ISLAMIC_STUDIES,
+    teacherId: "T5",
+    room: "١٠٢",
+  },
+
+  // MONDAY - Student S3 (أحمد)
+  {
+    studentId: "S3",
+    day: "monday",
+    timeSlot: "07:30-08:15",
+    subject: Subject.ENGLISH,
+    teacherId: "T2",
+    room: "١٠٣",
+  },
+  {
+    studentId: "S3",
+    day: "monday",
+    timeSlot: "08:15-09:00",
+    subject: Subject.SCIENCE,
+    teacherId: "T4",
+    room: "١٠٣",
+  },
+  {
+    studentId: "S3",
+    day: "monday",
+    timeSlot: "09:00-09:45",
+    subject: Subject.ISLAMIC_STUDIES,
+    teacherId: "T5",
+    room: "١٠٣",
+  },
+  {
+    studentId: "S3",
+    day: "monday",
+    timeSlot: "10:15-11:00",
+    subject: Subject.ARABIC,
+    teacherId: "T3",
+    room: "١٠٣",
+  },
+  {
+    studentId: "S3",
+    day: "monday",
+    timeSlot: "11:00-11:45",
+    subject: Subject.MATHEMATICS,
+    teacherId: "T1",
+    room: "١٠٣",
+  },
+
+  // TUESDAY - Student S1
   {
     studentId: "S1",
     day: "tuesday",
@@ -368,7 +452,91 @@ export const schedules: ClassSchedule[] = [
     room: "الملعب",
   },
 
-  // WEDNESDAY
+  // TUESDAY - Student S2
+  {
+    studentId: "S2",
+    day: "tuesday",
+    timeSlot: "07:30-08:15",
+    subject: Subject.ENGLISH,
+    teacherId: "T2",
+    room: "١٠٢",
+  },
+  {
+    studentId: "S2",
+    day: "tuesday",
+    timeSlot: "08:15-09:00",
+    subject: Subject.SOCIAL_STUDIES,
+    teacherId: "T6",
+    room: "١٠٢",
+  },
+  {
+    studentId: "S2",
+    day: "tuesday",
+    timeSlot: "09:00-09:45",
+    subject: Subject.COMPUTER_SCIENCE,
+    teacherId: "T8",
+    room: "مختبر ١",
+  },
+  {
+    studentId: "S2",
+    day: "tuesday",
+    timeSlot: "10:15-11:00",
+    subject: Subject.MATHEMATICS,
+    teacherId: "T1",
+    room: "١٠٢",
+  },
+  {
+    studentId: "S2",
+    day: "tuesday",
+    timeSlot: "11:00-11:45",
+    subject: Subject.PHYSICAL_EDUCATION,
+    teacherId: "T7",
+    room: "الملعب",
+  },
+
+  // TUESDAY - Student S3
+  {
+    studentId: "S3",
+    day: "tuesday",
+    timeSlot: "07:30-08:15",
+    subject: Subject.SOCIAL_STUDIES,
+    teacherId: "T6",
+    room: "١٠٣",
+  },
+  {
+    studentId: "S3",
+    day: "tuesday",
+    timeSlot: "08:15-09:00",
+    subject: Subject.PHYSICAL_EDUCATION,
+    teacherId: "T7",
+    room: "الملعب",
+  },
+  {
+    studentId: "S3",
+    day: "tuesday",
+    timeSlot: "09:00-09:45",
+    subject: Subject.MATHEMATICS,
+    teacherId: "T1",
+    room: "١٠١",
+  },
+  {
+    studentId: "S3",
+    day: "tuesday",
+    timeSlot: "10:15-11:00",
+    subject: Subject.COMPUTER_SCIENCE,
+    teacherId: "T8",
+    room: "مختبر ١",
+  },
+  {
+    studentId: "S3",
+    day: "tuesday",
+    timeSlot: "11:00-11:45",
+    subject: Subject.ENGLISH,
+    teacherId: "T2",
+    room: "١٠٣",
+  },
+
+  // WEDNESDAY - Student S1
   {
     studentId: "S1",
     day: "wednesday",
@@ -410,7 +578,91 @@ export const schedules: ClassSchedule[] = [
     room: "مختبر ١",
   },
 
-  // THURSDAY
+  // WEDNESDAY - Student S2
+  {
+    studentId: "S2",
+    day: "wednesday",
+    timeSlot: "07:30-08:15",
+    subject: Subject.SCIENCE,
+    teacherId: "T4",
+    room: "مختبر ٢",
+  },
+  {
+    studentId: "S2",
+    day: "wednesday",
+    timeSlot: "08:15-09:00",
+    subject: Subject.COMPUTER_SCIENCE,
+    teacherId: "T8",
+    room: "مختبر ١",
+  },
+  {
+    studentId: "S2",
+    day: "wednesday",
+    timeSlot: "09:00-09:45",
+    subject: Subject.ISLAMIC_STUDIES,
+    teacherId: "T5",
+    room: "١٠٢",
+  },
+  {
+    studentId: "S2",
+    day: "wednesday",
+    timeSlot: "10:15-11:00",
+    subject: Subject.ARABIC,
+    teacherId: "T3",
+    room: "١٠٢",
+  },
+  {
+    studentId: "S2",
+    day: "wednesday",
+    timeSlot: "11:00-11:45",
+    subject: Subject.SOCIAL_STUDIES,
+    teacherId: "T6",
+    room: "١٠٢",
+  },
+
+  // WEDNESDAY - Student S3
+  {
+    studentId: "S3",
+    day: "wednesday",
+    timeSlot: "07:30-08:15",
+    subject: Subject.COMPUTER_SCIENCE,
+    teacherId: "T8",
+    room: "مختبر ١",
+  },
+  {
+    studentId: "S3",
+    day: "wednesday",
+    timeSlot: "08:15-09:00",
+    subject: Subject.ARABIC,
+    teacherId: "T3",
+    room: "١٠٣",
+  },
+  {
+    studentId: "S3",
+    day: "wednesday",
+    timeSlot: "09:00-09:45",
+    subject: Subject.PHYSICAL_EDUCATION,
+    teacherId: "T7",
+    room: "الملعب",
+  },
+  {
+    studentId: "S3",
+    day: "wednesday",
+    timeSlot: "10:15-11:00",
+    subject: Subject.SOCIAL_STUDIES,
+    teacherId: "T6",
+    room: "١٠٣",
+  },
+  {
+    studentId: "S3",
+    day: "wednesday",
+    timeSlot: "11:00-11:45",
+    subject: Subject.ISLAMIC_STUDIES,
+    teacherId: "T5",
+    room: "١٠٣",
+  },
+
+  // THURSDAY - Student S1
   {
     studentId: "S1",
     day: "thursday",
@@ -450,6 +702,90 @@ export const schedules: ClassSchedule[] = [
     subject: Subject.PHYSICAL_EDUCATION,
     teacherId: "T7",
     room: "الملعب",
+  },
+
+  // THURSDAY - Student S2
+  {
+    studentId: "S2",
+    day: "thursday",
+    timeSlot: "07:30-08:15",
+    subject: Subject.SOCIAL_STUDIES,
+    teacherId: "T6",
+    room: "١٠٢",
+  },
+  {
+    studentId: "S2",
+    day: "thursday",
+    timeSlot: "08:15-09:00",
+    subject: Subject.ENGLISH,
+    teacherId: "T2",
+    room: "١٠٢",
+  },
+  {
+    studentId: "S2",
+    day: "thursday",
+    timeSlot: "09:00-09:45",
+    subject: Subject.PHYSICAL_EDUCATION,
+    teacherId: "T7",
+    room: "الملعب",
+  },
+  {
+    studentId: "S2",
+    day: "thursday",
+    timeSlot: "10:15-11:00",
+    subject: Subject.SCIENCE,
+    teacherId: "T4",
+    room: "مختبر ٢",
+  },
+  {
+    studentId: "S2",
+    day: "thursday",
+    timeSlot: "11:00-11:45",
+    subject: Subject.MATHEMATICS,
+    teacherId: "T1",
+    room: "١٠٢",
+  },
+
+  // THURSDAY - Student S3
+  {
+    studentId: "S3",
+    day: "thursday",
+    timeSlot: "07:30-08:15",
+    subject: Subject.MATHEMATICS,
+    teacherId: "T1",
+    room: "١٠٣",
+  },
+  {
+    studentId: "S3",
+    day: "thursday",
+    timeSlot: "08:15-09:00",
+    subject: Subject.ISLAMIC_STUDIES,
+    teacherId: "T5",
+    room: "١٠٣",
+  },
+  {
+    studentId: "S3",
+    day: "thursday",
+    timeSlot: "09:00-09:45",
+    subject: Subject.ENGLISH,
+    teacherId: "T2",
+    room: "١٠٣",
+  },
+  {
+    studentId: "S3",
+    day: "thursday",
+    timeSlot: "10:15-11:00",
+    subject: Subject.PHYSICAL_EDUCATION,
+    teacherId: "T7",
+    room: "الملعب",
+  },
+  {
+    studentId: "S3",
+    day: "thursday",
+    timeSlot: "11:00-11:45",
+    subject: Subject.SCIENCE,
+    teacherId: "T4",
+    room: "مختبر ٢",
   },
 ];
 
